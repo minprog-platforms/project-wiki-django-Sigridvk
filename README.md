@@ -43,4 +43,17 @@ An implementation of a website similar to Wikipedia. This website has several pa
 
 ## Navigation between screens
 ### Menu on the right
-This is for all pages the same. If the user clicks on 'Home' the index page is shown.
+This is for all pages the same. 
+- Home: go to index page
+- Create New Page: go to 'new page' page
+- Random: has no functionality yet
+- Search bar: when enter-key is pressed go to search results page
+
+### Search results page
+- Title {1}: go to that entry page
+- Textbox: go to that entry page
+
+### Entry, Edit and New page
+- Edit page: go to Edit page
+- Save page: go to entry page
+- Textbox: if the border is visible, you can edit the text
