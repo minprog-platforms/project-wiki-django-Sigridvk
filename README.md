@@ -55,5 +55,5 @@ This is for all pages the same.
 
 ### Entry, Edit and New page
 - Edit page: go to Edit page
-- Save page: go to entry page
+- Save page: go to entry page, give errormessage if title already exists.
 - Textbox: if the border is visible, you can edit the text
