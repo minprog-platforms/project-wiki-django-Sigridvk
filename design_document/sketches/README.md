@@ -39,3 +39,4 @@ An implementation of a website similar to Wikipedia. This website has several pa
 ## Edit page
 
 ![Edit page](/design_document/sketches/Edit@1x.png)
+
