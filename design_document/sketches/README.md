@@ -15,7 +15,11 @@ An implementation of a website similar to Wikipedia. This website has several pa
 - html file for editing a page that already exists
 - html file for error page. This shows if an entry does nog exist 
 
-## Present screens
+## Screen designs
 
 ### Index
-![image_index](/design_document/sketches/Index@1x.png)
+!(/design_document/sketches/Index@1x.png)
+
+### Search results
+
+!(/design_document/sketches/Search_results@1x.png)
