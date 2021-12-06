@@ -24,19 +24,23 @@ An implementation of a website similar to Wikipedia. This website has several pa
 
 ![Search results page](/design_document/sketches/Search_results@1x.png)
 
-## Entry page
+### Entry page
 
 ![Entry page](/design_document/sketches/Entry@1x.png)
 
-## New page
+### New page
 
 ![New page](/design_document/sketches/New_page@1x.png)
 
-## Error page
+### Error page
 
 ![Error page](/design_document/sketches/Error@1x.png)
 
-## Edit page
+### Edit page
 
 ![Edit page](/design_document/sketches/Edit@1x.png)
 
+
+## Navigation between screens
+### Menu on the right
+This is for all pages the same. If the user clicks on 'Home' the index page is shown.
