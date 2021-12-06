@@ -18,8 +18,8 @@ An implementation of a website similar to Wikipedia. This website has several pa
 ## Screen designs
 
 ### Index
-!(/design_document/sketches/Index@1x.png)
+![Index page](/design_document/sketches/Index@1x.png)
 
 ### Search results
 
-!(/design_document/sketches/Search_results@1x.png)
+![Search results page](/design_document/sketches/Search_results@1x.png)
