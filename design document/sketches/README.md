@@ -18,4 +18,4 @@ An implementation of a website similar to Wikipedia. This website has several pa
 ## Present screens
 
 ### Index
-![image_index](/Users/sigridvanklaveren/Documenten/Uva minor programmeren/Project Django/project-wiki-django-Sigridvk/design document/sketches/Index@1x.png)
+![image_index](/Index@1x.png)
