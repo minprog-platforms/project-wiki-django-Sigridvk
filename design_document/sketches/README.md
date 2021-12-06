@@ -24,19 +24,36 @@ An implementation of a website similar to Wikipedia. This website has several pa
 
 ![Search results page](/design_document/sketches/Search_results@1x.png)
 
-## Entry page
+### Entry page
 
 ![Entry page](/design_document/sketches/Entry@1x.png)
 
-## New page
+### New page
 
 ![New page](/design_document/sketches/New_page@1x.png)
 
-## Error page
+### Error page
 
 ![Error page](/design_document/sketches/Error@1x.png)
 
-## Edit page
+### Edit page
 
 ![Edit page](/design_document/sketches/Edit@1x.png)
 
+
+## Navigation between screens
+### Menu on the right
+This is for all pages the same. 
+- Home: go to index page
+- Create New Page: go to 'new page' page
+- Random: has no functionality yet
+- Search bar: when enter-key is pressed go to entry page if it exists. Otherwise go to search results page
+
+### Search results page
+- Title {1}: go to that entry page
+- Textbox: go to that entry page
+
+### Entry, Edit and New page
+- Edit page: go to Edit page
+- Save page: go to entry page, give errormessage if title already exists.
+- Textbox: if the border is visible, you can edit the text
