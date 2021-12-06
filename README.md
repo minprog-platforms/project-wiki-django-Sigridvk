@@ -47,7 +47,7 @@ This is for all pages the same.
 - Home: go to index page
 - Create New Page: go to 'new page' page
 - Random: has no functionality yet
-- Search bar: when enter-key is pressed go to search results page
+- Search bar: when enter-key is pressed go to entry page if it exists. Otherwise go to search results page
 
 ### Search results page
 - Title {1}: go to that entry page
