@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search results
+    For
+{% endblock %}
+
+{% block body %}
+    
+    {{ markdown_text | safe }}
+
+{% endblock %}
