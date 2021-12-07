@@ -49,6 +49,7 @@ def search_results(request):
                     return entry(request, search_term)
                 elif search_term.lower() in entries.lower():
                     possible_entries.append(entries)
+
             if len(possible_entries) == 0:
                 return render(request, 'encyclopedia/search.html', {
                         "search_term" : search_term,
@@ -68,3 +69,7 @@ def search_results(request):
     
     return error(request)
 
+def new(request):
+    return render(request, 'encyclopedia/new.html',{
+        "form": NewSearchForm()
+    })
