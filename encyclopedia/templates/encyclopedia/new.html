@@ -1,11 +1,40 @@
 {% extends "encyclopedia/layout.html" %}
-
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% block title %}
     New Page
 {% endblock %}
+</head>
+
 
 {% block body %}
-    <label for="title">Give Title</label>
-    <textarea id="title", name="title", rows="5", cols="1"></textarea>
+<style>
+    .NewForm{
+        margin: 10px;
+        margin-left: 0px;
+    }
+    #content{
+        height: 480px;
+    }
+</style>
+<h1>Create New Entry</h1>
+  
 
+<form action="{% url 'new' %}" method="POST">
+    {% csrf_token %}
+    {% if error %}
+    <div class="container">
+        <div class="alert alert-danger">
+            <strong>Name already exists!</strong> Please enter a new name.
+        </div>
+    </div>  
+    {% endif %}
+    <div>
+        {{ new_form }}
+    </div>
+    
+    
+    <button type="submit" name="submit_entry">Submit New Entry</button>
 {% endblock %}

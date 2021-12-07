@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: pink;
+    background-color: white;
 }
 
 code {
@@ -33,7 +33,7 @@ textarea {
 }
 
 .sidebar {
-    background-color: blue;
+    background-color: #f0f0f0;
     height: 100vh;
     padding: 20px;
 }

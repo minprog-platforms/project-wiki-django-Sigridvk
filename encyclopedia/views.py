@@ -1,6 +1,9 @@
+from ctypes import sizeof
 from logging import PlaceHolder
 from os import name
-from django.forms.widgets import TextInput
+from typing import Text
+from django.forms import widgets
+from django.forms.widgets import TextInput, Textarea
 from django.http.request import HttpRequest
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
@@ -13,6 +16,13 @@ import encyclopedia
 
 class NewSearchForm(forms.Form):
     search_term = forms.CharField(label="", widget=TextInput(attrs={'placeholder':'Search Encyclopedia'}))
+
+
+class NewPageForm(forms.Form):
+    title = forms.CharField(label="", widget=TextInput(attrs={'placeholder':'Give Title', 'size':'40', 'required': True,
+    'class': 'NewForm'}))
+    content = forms.CharField(label="", widget=Textarea(attrs={'placeholder':'Give Text in Markdown', 'rows':5, 'cols':40, 
+    'class': 'NewForm', 'id':'content', 'required': True,}))
 
 
 def index(request):
@@ -70,6 +80,24 @@ def search_results(request):
     return error(request)
 
 def new(request):
+    if request.method == "POST":
+        form = NewPageForm(request.POST)
+
+        if form.is_valid():
+            title = form.cleaned_data["title"]
+            content = f"#{title}\n"
+            content += form.cleaned_data["content"]
+            if any(title.lower() == te.lower() for te in util.list_entries()):
+                return render(request, 'encyclopedia/new.html',{
+                    "error":True,
+                    "form": NewSearchForm(),
+                    "new_form": form
+                })
+            else:
+                util.save_entry(title, content)
+                return entry(request, title)
+
     return render(request, 'encyclopedia/new.html',{
-        "form": NewSearchForm()
+        "form": NewSearchForm(),
+        "new_form": NewPageForm()
     })
