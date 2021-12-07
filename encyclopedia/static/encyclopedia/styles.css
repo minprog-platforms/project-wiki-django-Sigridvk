@@ -21,10 +21,10 @@ textarea {
     padding: 10px;
 }
 
-.main h1{ 
+/* .main h1{ 
     font-size: 80px;
     margin-top: 80px;
-}
+} */
 
 .search {
     width: 100%;
@@ -33,7 +33,7 @@ textarea {
 }
 
 .sidebar {
-    background-color: #f0f0f0;
+    background-color: blue;
     height: 100vh;
     padding: 20px;
 }
