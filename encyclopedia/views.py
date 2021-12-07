@@ -8,6 +8,7 @@ from django import forms
 import markdown2
 
 from . import util
+import encyclopedia
 
 
 class NewSearchForm(forms.Form):
@@ -31,7 +32,7 @@ def entry(request, title):
         return render(request, "encyclopedia/entry.html", {
         "title": title.capitalize(),
         "markdown_text": markdown2.markdown(util.get_entry(title)),
-        "form":NewSearchForm()
+        "form": NewSearchForm()
     })
     else:
         return error(request)
@@ -41,15 +42,29 @@ def search_results(request):
         form = NewSearchForm(request.GET)
 
         if form.is_valid():
+            possible_entries = []
             search_term = form.cleaned_data["search_term"]
             for entries in util.list_entries():
                 if search_term.lower() == entries.lower():
                     return entry(request, search_term)
                 elif search_term.lower() in entries.lower():
-                    pass
+                    possible_entries.append(entries)
+            if len(possible_entries) == 0:
+                return render(request, 'encyclopedia/search.html', {
+                        "search_term" : search_term,
+                        "form": NewSearchForm(),
+                        "no_results": True
+                    })
+            else:
+                return render(request, 'encyclopedia/search.html',{
+                "entries": possible_entries,
+                "form": NewSearchForm(),
+                "search_term": search_term
+            })
         else:
             return render(request, "{% url: 'index' %}", {
                 "form": form
             })
-    else:
-        return error(request)
+    
+    return error(request)
+
