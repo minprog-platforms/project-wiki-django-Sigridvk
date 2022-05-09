@@ -6,9 +6,11 @@ from django.forms import widgets
 from django.forms.widgets import TextInput, Textarea
 from django.http.request import HttpRequest
 from django.http.response import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from django import forms
 import markdown2
+import random
 
 from . import util
 import encyclopedia
@@ -101,3 +103,8 @@ def new(request):
         "form": NewSearchForm(),
         "new_form": NewPageForm()
     })
+
+def random_page(request):
+    entries = util.list_entries()
+    random_entry = random.choice(entries)
+    return entry(request, random_entry)
